@@ -12,24 +12,28 @@
 
 #include "MainWindow.h"
 #include <QtWebKit>
+#include <QApplication>
 
 #include "WebView.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
+    QApplication::setApplicationName("Nitro-App");
+    QApplication::setApplicationVersion("1.0.0");
+    QApplication::setOrganizationDomain("Kristou.com");
+
     setWindowIcon(QIcon(QString::fromUtf8(":/nitrotasks.png")));
+
+    setWindowTitle(QString::fromUtf8("Nitro-App"));
 
     //QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
 
     WebView * webView = new WebView(this);
 
     webView->setUrl(QUrl(QString::fromUtf8("qrc:/Nitro/index.html")));
-    QString code = "$('[src*=gif]').remove()";
-    webView->page()->mainFrame()->evaluateJavaScript(code);
 
     setCentralWidget(webView);
-
 }
 
 MainWindow::~MainWindow()
