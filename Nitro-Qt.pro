@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui webkit
+QT       += core gui webkit network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -13,10 +13,12 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        MainWindow.cpp
+        MainWindow.cpp \
+    WebView.cpp
 
-HEADERS  += MainWindow.h
+HEADERS  += MainWindow.h \
+    WebView.h
 
-FORMS    += MainWindow.ui
+FORMS    +=
 
 RESOURCES += Nitro.qrc
