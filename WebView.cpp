@@ -12,6 +12,7 @@
 
 #include "WebView.h"
 #include <QApplication>
+#include <QAction>
 
 WebView::WebView(QWidget *parent) :
     QWebView(parent)
@@ -29,6 +30,8 @@ WebView::WebView(QWidget *parent) :
     settings()->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls,true);
     settings()->setAttribute(QWebSettings::LocalContentCanAccessFileUrls,true);
     settings()->setAttribute(QWebSettings::PluginsEnabled, true);
+
+    page()->action(QWebPage::Reload)->setVisible(false);
 }
 
 QWebView * WebView::createWindow(QWebPage::WebWindowType type)

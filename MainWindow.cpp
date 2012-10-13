@@ -25,6 +25,8 @@ MainWindow::MainWindow(QWidget *parent) :
     WebView * webView = new WebView(this);
 
     webView->setUrl(QUrl(QString::fromUtf8("qrc:/Nitro/index.html")));
+    QString code = "$('[src*=gif]').remove()";
+    webView->page()->mainFrame()->evaluateJavaScript(code);
 
     setCentralWidget(webView);
 
