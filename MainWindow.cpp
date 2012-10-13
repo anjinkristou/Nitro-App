@@ -20,7 +20,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     setWindowIcon(QIcon(QString::fromUtf8(":/nitrotasks.png")));
 
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
+    //QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
 
     WebView * webView = new WebView(this);
 

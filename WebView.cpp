@@ -28,6 +28,7 @@ WebView::WebView(QWidget *parent) :
     settings()->setAttribute(QWebSettings::JavascriptCanCloseWindows,true);
     settings()->setAttribute(QWebSettings::LocalContentCanAccessRemoteUrls,true);
     settings()->setAttribute(QWebSettings::LocalContentCanAccessFileUrls,true);
+    settings()->setAttribute(QWebSettings::PluginsEnabled, true);
 }
 
 QWebView * WebView::createWindow(QWebPage::WebWindowType type)
