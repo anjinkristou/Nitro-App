@@ -123,4 +123,7 @@
     <file>Nitro/sass/web.scss</file>
     <file>Nitro/sass/wunderlist.scss</file>
   </qresource>
+  <qresource>
+    <file>nitrotasks.png</file>
+  </qresource>
 </RCC>

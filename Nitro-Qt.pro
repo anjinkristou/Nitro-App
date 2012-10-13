@@ -22,3 +22,7 @@ HEADERS  += MainWindow.h \
 FORMS    +=
 
 RESOURCES += Nitro.qrc
+
+RC_FILE = Nitro.rc
+
+ICON = nitrotasks.icns

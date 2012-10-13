@@ -6,14 +6,11 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
+    setWindowIcon(QIcon(QString::fromUtf8(":/nitrotasks.png")));
+
     QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
 
     WebView * webView = new WebView(this);
-//    WebPage *page = new WebPage(webView);
-
-////    page->mainFrame()->setUrl(QUrl(QString::fromUtf8("qrc:/Nitro/index.html")));
-
-//    webView->setPage((QWebPage*)page);
 
     webView->setUrl(QUrl(QString::fromUtf8("qrc:/Nitro/index.html")));
 
