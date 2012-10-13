@@ -1,4 +1,4 @@
 Nitro-App
 =========
 
-Standalone pplication for Nitro tasks.
+Standalone application for Nitro tasks.
