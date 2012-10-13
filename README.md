@@ -1,4 +1,4 @@
-Nitro-Qt
-========
+Nitro-App
+=========
 
-Qt application for Nitro tasks
+Standalone pplication for Nitro tasks.
