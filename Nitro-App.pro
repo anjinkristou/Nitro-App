@@ -32,3 +32,5 @@ RESOURCES += Nitro.qrc
 RC_FILE = Nitro.rc
 
 ICON = nitrotasks.icns
+
+mac:QMAKE_POST_LINK += macdeployqt $${TARGET}.app

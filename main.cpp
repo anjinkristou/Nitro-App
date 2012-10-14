@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
     a.setApplicationName("Nitro-App");
     a.setApplicationVersion("1.0.0");
+    a.setOrganizationName("Kristou Inc");
     a.setOrganizationDomain("Kristou.com");
 
     MainWindow w;

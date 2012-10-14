@@ -23,6 +23,8 @@ public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
     
+    void saveSettings();
+    void loadSettings();
 private:
 
 };

@@ -12,6 +12,7 @@
 
 #include "MainWindow.h"
 #include <QtWebKit>
+#include <QApplication>
 
 #include "WebView.h"
 
@@ -30,8 +31,46 @@ MainWindow::MainWindow(QWidget *parent) :
     webView->setUrl(QUrl(QString::fromUtf8("qrc:/Nitro/index.html")));
 
     setCentralWidget(webView);
+
+    resize(1024, 768);
+
+    loadSettings();
 }
 
 MainWindow::~MainWindow()
 {
+    saveSettings();
+}
+
+void MainWindow::saveSettings()
+{
+    QSettings qsettings( QApplication::organizationName(), QApplication::applicationName() );
+
+    qsettings.beginGroup( "mainwindow" );
+
+    qsettings.setValue( "geometry", saveGeometry() );
+    qsettings.setValue( "savestate", saveState() );
+    qsettings.setValue( "maximized", isMaximized() );
+    if ( !isMaximized() ) {
+        qsettings.setValue( "pos", pos() );
+        qsettings.setValue( "size", size() );
+    }
+
+    qsettings.endGroup();
+}
+
+void MainWindow::loadSettings()
+{
+    QSettings qsettings( QApplication::organizationName(), QApplication::applicationName() );
+
+    qsettings.beginGroup( "mainwindow" );
+
+    restoreGeometry(qsettings.value( "geometry", saveGeometry() ).toByteArray());
+    restoreState(qsettings.value( "savestate", saveState() ).toByteArray());
+    move(qsettings.value( "pos", pos() ).toPoint());
+    resize(qsettings.value( "size", size() ).toSize());
+    if ( qsettings.value( "maximized", isMaximized() ).toBool() )
+        showMaximized();
+
+    qsettings.endGroup();
 }
