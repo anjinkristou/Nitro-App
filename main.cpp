@@ -16,6 +16,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+
+    a.setApplicationName("Nitro-App");
+    a.setApplicationVersion("1.0.0");
+    a.setOrganizationDomain("Kristou.com");
+
     MainWindow w;
     w.show();
     

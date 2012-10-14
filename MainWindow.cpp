@@ -12,22 +12,18 @@
 
 #include "MainWindow.h"
 #include <QtWebKit>
-#include <QApplication>
 
 #include "WebView.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent)
 {
-    QApplication::setApplicationName("Nitro-App");
-    QApplication::setApplicationVersion("1.0.0");
-    QApplication::setOrganizationDomain("Kristou.com");
 
     setWindowIcon(QIcon(QString::fromUtf8(":/nitrotasks.png")));
 
     setWindowTitle(QString::fromUtf8("Nitro-App"));
 
-    //QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
+    QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
 
     WebView * webView = new WebView(this);
 
