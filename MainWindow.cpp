@@ -24,7 +24,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     setWindowTitle(QString::fromUtf8("Nitro-App"));
 
-    QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
+    //QWebSettings::globalSettings()->setAttribute(QWebSettings::DeveloperExtrasEnabled,true);
 
     WebView * webView = new WebView(this);
 

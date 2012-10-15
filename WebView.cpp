@@ -32,6 +32,7 @@ WebView::WebView(QWidget *parent) :
     settings()->setAttribute(QWebSettings::PluginsEnabled, true);
 
     page()->action(QWebPage::Reload)->setVisible(false);
+    page()->action(QWebPage::Back)->setVisible(false);
 }
 
 QWebView * WebView::createWindow(QWebPage::WebWindowType type)
